@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embodied Carbon Emissions</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Loader -->
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Navbar -->
+        <nav>
+            <h1>Carbon Dashboard</h1>
+            <ul>
+                <li><a href="#chart">Chart</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#key">Key</a></li>
+                <li><button id="modeToggle">🌙</button></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <section id="chart">
+                <div class="filter-section">
+                    <h3>Filter by</h3>
+                    <div class="filter-type">
+                        <p>Type</p>
+                        <div class="buttons">
+                            <button class="btn">Refurbishment</button>
+                            <button class="btn">New build</button>
+                            <button class="btn active">All</button>
+                        </div>
+                    </div>
+                    <div class="filter-status">
+                        <p>Status</p>
+                        <div class="buttons">
+                            <button class="btn active">Complete</button>
+                            <button class="btn">Estimate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="title-section">
+                    <h1>EMBODIED<br>CARBON<br>EMISSIONS</h1>
+                    <p>Intensity measured by kgCO<sub>2</sub>e/m<sup>2</sup></p>
+                    <button class="download-btn">
+                        Download the data
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="key-section">
+                    <h3>Key</h3>
+                    <div class="key-item">
+                        <span class="dash-line"></span>
+                        <p>500 kgCO<sub>2</sub>e/m<sup>2</sup> - Embodied Carbon Target 2030</p>
+                    </div>
+                    <div class="key-item">
+                        <span class="solid-line"></span>
+                        <p>600 kgCO<sub>2</sub>e/m<sup>2</sup> - Embodied Carbon Target 2025</p>
+                    </div>
+                </div>
+
+                <div class="chart">
+                    <canvas id="barChart" width="800" height="400"></canvas>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
